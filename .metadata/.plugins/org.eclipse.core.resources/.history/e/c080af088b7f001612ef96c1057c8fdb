@@ -1,0 +1,97 @@
+package poo.proj1;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Biblioteca {
+	
+	String nome;
+	String ra;
+	String titulo;
+	String quantidade;
+	int op;
+	
+	Scanner input = new Scanner(System.in);
+	ArrayList<Aluno> alunoLista = new ArrayList<Aluno>();
+	ArrayList<Livro> livroLista = new ArrayList<Livro>();
+	
+	Aluno aluno = new Aluno();
+	Livro livro = new Livro();
+	
+	public void menu(){
+		do{
+			System.out.println("1: Cadastrar Aluno.");
+			System.out.println("2: Cadastrar Livro.");
+			System.out.println("3: Emprestar Livro.");
+			System.out.println("4: Devolver Livro.");
+			System.out.println("5: Consultar usuario.");
+			System.out.println("5: Sair.");
+			
+			switch (op){
+			case 1:
+			{
+				cadAluno();
+				break;
+			}
+			case 2:
+			{
+				cadLivro();
+				break;
+			}
+			case 3:
+			{
+				
+				break;
+			}
+			case 4:
+			{
+				
+				break;
+			}
+			case 5:
+			{
+				System.exit(0);			
+			}
+			}
+			
+		}while(op != 5);
+	}
+	
+	public void cadAluno(){
+		System.out.println("Digite o nome do aluno: ");
+		nome = input.nextLine();
+		aluno.setNome(nome);
+		System.out.println("Digite o RA do aluno: ");
+		ra = input.nextLine();
+		aluno.setRa(ra);
+		
+		alunoLista.add(aluno);
+	}		
+	
+	public void cadLivro(){
+		System.out.println("Digite o titulo do livro: ");
+		titulo = input.nextLine();
+		livro.setTitulo(titulo);
+		System.out.println("Digite a quantidade do livro: ");
+		quantidade = input.nextLine();
+		livro.setQuantidade(quantidade);
+		
+		livroLista.add(livro);
+	}
+	
+	public void pesquisarAluno(){  
+        
+        System.out.println("Digite o nome do aluno a ser pesquisado: ");   
+        aluno.setNome(input.nextLine());  
+          
+        for(int i = 0; i < alunoLista.size();i++){  
+            if(alunoLista.get(i).getNome().equals(aluno.getNome())){  
+                System.out.println(alunoLista.get(i));  
+                break;  
+            }else{  
+                System.out.println("Aluno não encontrado!");  
+                break;  
+            }  
+        }  
+    }  
+}

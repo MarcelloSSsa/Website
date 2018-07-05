@@ -1,0 +1,21 @@
+package poo.proj1;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Biblioteca {
+	
+	String nome;
+	String ra;
+	String titulo;
+	String quantidade;
+	
+	Scanner input = new Scanner(System.in);
+	
+	public void cadAluno(){
+		System.out.println("Digite o nome do aluno: ");
+		
+		System.out.println("Digite o RA do aluno: ");
+	}		
+	
+}

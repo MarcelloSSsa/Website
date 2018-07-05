@@ -1,0 +1,23 @@
+package poo.proj1;
+
+public class Livro {
+	private String titulo;
+	private String quantidade;
+	
+	public void setTitulo(String titulo){
+		this.titulo = titulo;
+	}
+	
+	public String getTitulo(){
+		return titulo;
+	}
+	
+	public void setQuantidade(String quantidade){
+		this.quantidade = quantidade;
+	}
+	
+	public String getQuantidade(){
+		return quantidade;
+	}
+
+}

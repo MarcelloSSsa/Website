@@ -1,0 +1,72 @@
+<%@page import="java.io.*"%>
+<%@page import="java.net.*"%>
+<%@page import="com.modulos.*"%>
+<%@page import="java.util.*"%>
+<HTML>
+<HEAD>
+<TITLE>Network Sensor</TITLE>
+</HEAD>
+
+<BODY>
+	<H1>System Home</H1>
+	
+	<form method="POST" action="Client.jsp">
+		Enter the command: <input type="text" name="comando"> <br><br>
+		<input type="submit" value="Enviar">
+	</form>
+	<%
+		try {
+			int character;
+			Socket socket = new Socket("192.168.1.101", 8888);
+
+			InputStream inSocket = socket.getInputStream();
+			OutputStream outSocket = socket.getOutputStream();
+
+			String str = null;
+			str = request.getParameter("comando");
+			String comando = null;
+			byte buffer[] = str.getBytes();
+			byte[] bufferIn = new byte[1024];
+			outSocket.write(buffer);
+			
+			List<Modulo> moduloList = new ArrayList<Modulo>();
+			Modulo modulo = new Modulo();
+			
+			ByteArrayOutputStream result = new ByteArrayOutputStream();
+			
+			while ((character = inSocket.read(bufferIn)) != -1) {
+				out.print((char) character);
+				result.write(bufferIn, 0, character);
+			}
+			
+			comando = result.toString("UTF-8");
+			
+			out.println("<h1>String</h1>");
+			out.println(comando);
+			out.println("<br>");
+			
+			out.println("<h1>Teste</h1>");
+			
+			String[] array = comando.split(";");
+			out.println("<p>tamanho: </p>");
+			out.println(array.length);
+			out.println("<br>");
+		       for(int i=0;i<array.length;i++)
+		       {
+		           out.println(array[i]);
+		       }
+		       modulo.setId(Integer.parseInt(array[0]));
+		       modulo.setSerial(Integer.parseInt(array[1]));
+		       modulo.setStatus(Integer.parseInt(array[5]));
+		       modulo.getStatus();
+		       /*moduloList.add(modulo); */
+
+			socket.close();
+		} catch (java.net.ConnectException e) {
+	%>
+	Error: Server not found.
+	<%
+		}
+	%>
+</BODY>
+</HTML>

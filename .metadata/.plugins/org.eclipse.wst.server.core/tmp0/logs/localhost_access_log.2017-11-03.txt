@@ -1,0 +1,10 @@
+127.0.0.1 - - [03/Nov/2017:23:50:29 -0200] "GET / HTTP/1.1" 404 1081
+127.0.0.1 - - [03/Nov/2017:23:50:52 -0200] "GET /ClientTCP/index.jsp HTTP/1.1" 200 7299
+127.0.0.1 - - [03/Nov/2017:23:51:13 -0200] "GET /ClientTCP/index.jsp HTTP/1.1" 200 7299
+127.0.0.1 - - [03/Nov/2017:23:51:22 -0200] "GET /ClientTCP/index.jsp HTTP/1.1" 200 7299
+127.0.0.1 - - [03/Nov/2017:23:51:23 -0200] "GET /ClientTCP/img/favicon.ico HTTP/1.1" 404 1106
+127.0.0.1 - - [03/Nov/2017:23:53:04 -0200] "GET /ClientTCP/index.jsp HTTP/1.1" 500 2985
+127.0.0.1 - - [03/Nov/2017:23:53:05 -0200] "GET /favicon.ico HTTP/1.1" 404 1092
+127.0.0.1 - - [03/Nov/2017:23:53:05 -0200] "GET /favicon.ico HTTP/1.1" 404 1092
+127.0.0.1 - - [03/Nov/2017:23:53:30 -0200] "GET /ClientTCP/index.jsp HTTP/1.1" 500 2975
+127.0.0.1 - - [03/Nov/2017:23:53:49 -0200] "GET /ClientTCP/index.jsp HTTP/1.1" 500 2985
